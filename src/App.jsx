@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
+import myImage from './assets/images/Akash.jpeg';
+
 import { ChevronDown, Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Download, Menu, X, Code, Briefcase, GraduationCap, Award, User, MessageCircle } from 'lucide-react';
 
 const Portfolio = () => {
@@ -139,10 +141,10 @@ const projects = [
       <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 w-full">
         <div className="w-full text-center px-4">
           <div className="mb-8">
-            <img
-              src="/src/assets/images/Akash.jpeg"
-              alt="Profile"
-              className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg"
+            <img 
+            src={myImage} 
+            alt="Profile" 
+            className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg"
             />
             <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">
               Hi, I'm <span className="text-blue-600">Akash Thakur</span>
