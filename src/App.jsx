@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Search } from 'lucide-react';
 import { ChevronDown, Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Download, Menu, X, Code, Briefcase, GraduationCap, Award, User, MessageCircle } from 'lucide-react';
 
 const Portfolio = () => {
+  const [searchQuery, setSearchQuery] = useState('');
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,14 +36,17 @@ const Portfolio = () => {
   };
 
 const skills = [
-  'React',
+  'ReactJS',
   'JavaScript', 
   'Node.js',
   'Python',
   'MYSQL',
   'MongoDB',
   'Git',
-  'Azure'
+  'TailwindCSS',
+  'HTML',
+  'CSS'
+
 ];
 
 const projects = [
@@ -51,7 +56,8 @@ const projects = [
     tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'TailwindCSS'],
     github: '#', // Add your GitHub link here
     live: 'https://studentscorner.great-site.net/studentcorner/home.php', // Replace with your actual live link if available
-    image: 'https://studentscorner.great-site.net/studentcorner/images/logobanner.png' // Replace with actual image link if available
+    image: 'https://studentscorner.great-site.net/studentcorner/images/logobanner.png'
+     // Replace with actual image link if available
   },
   {
     title: 'Smart Helmet Detection',
@@ -65,7 +71,7 @@ const projects = [
 
 
   return (
-    <div className="min-h-screen bg-gray-50 w-full overflow-x-hidden">
+    <div className="min-h-screen w-full bg-gray-200 overflow-x-hidden">
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
         <div className="w-full px-4 sm:px-6 lg:px-8">
@@ -73,6 +79,18 @@ const projects = [
             <div className="text-2xl font-bold text-gray-800">
               <span className="text-blue-600">Port</span>folio
             </div>
+
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-600 h-4 w-4" />
+                <input
+                  type="text"
+                    placeholder="Search..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className=" pl-10 pr-3 py-3  border border-blue-600 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all"
+                />
+            </div>
+
             
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
@@ -122,9 +140,9 @@ const projects = [
         <div className="w-full text-center px-4">
           <div className="mb-8">
             <img
-              src="../src/assets/images/pp.jpeg"
+              src="./src/assets/images/Akash.jpeg"
               alt="Profile"
-              className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-lg"
+              className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg"
             />
             <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">
               Hi, I'm <span className="text-blue-600">Akash Thakur</span>
