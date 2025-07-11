@@ -24,52 +24,45 @@ const Portfolio = () => {
   };
 
     const downloadResume = () => {
-    const resumeUrl = '/resume/Chaitanya_Patil_Resume.pdf';
+    const resumeUrl = '/resume/Akash_Thakur_Resume.pdf';
     const link = document.createElement('a');
     link.href = resumeUrl;
-    link.download = 'Chaitanya_Patil_Resume.pdf';
+    link.download = 'Akash_Thakur_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
-  const skills = [
-    { name: 'React', level: 60 },
-    { name: 'JavaScript', level: 70 },
-    { name: 'Node.js', level: 40 },
-    { name: 'Python', level: 75 },
-    { name: 'MYSQL', level: 50 },
-    { name: 'MongoDB', level: 60 },
-    { name: 'Git', level: 65 },
-    { name: 'Azure', level: 45 }
-  ];
+const skills = [
+  'React',
+  'JavaScript', 
+  'Node.js',
+  'Python',
+  'MYSQL',
+  'MongoDB',
+  'Git',
+  'Azure'
+];
 
-  const projects = [
-    {
-      title: 'PasteRoom',
-      description: 'Full-stack file sharing platform with React, Node.js, and MongoDB. Features include user authentication, payment integration, and admin dashboard.',
-      tech: ['React', 'Node.js', 'Express.js', 'Azure'],
-      github: '#',
-      live: 'https://www.pasteroom.live',
-      image: 'https://product-list.sfo3.digitaloceanspaces.com/products/paste-room/images/d36dd897-58bf-4224-8a8c-c73f2b20e2a2.jpeg'
-    },
-    {
-      title: 'CampusResults',
-      description: 'CampusResults is a web application designed to help students manage their academic results and track their progress over time. It features user authentication, data visualization, and a responsive design.',
-      tech: ['React', 'Node.js', 'Express.js', 'TailwindCSS', 'Apex Chart'],
-      github: '#',
-      live: 'https://www.campusresults.live/',
-      image: 'https://media.licdn.com/dms/image/v2/D5622AQHKSGIz86DTnQ/feedshare-shrink_800/B56ZTFyceEGUAg-/0/1738485123155?e=2147483647&v=beta&t=ByC-h68GAmYcou1QY7CxZ0FMCrom0dOQHmoFhCVfN7g'
-    },
-    // {
-    //   title: 'Weather Analytics Dashboard',
-    //   description: 'Data visualization dashboard showing weather patterns and analytics with interactive charts and forecasting capabilities.',
-    //   tech: ['React', 'D3.js', 'Python', 'FastAPI'],
-    //   github: '#',
-    //   live: '#',
-    //   image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=250&fit=crop'
-    // }
-  ];
+const projects = [
+  {
+    title: 'Student\'s Counter',
+    description: 'A student-friendly web platform designed to help newcomers easily find PGs, hostels, messes, and other essential services near PICT. Built to simplify the settling-in process for first-year students.',
+    tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'TailwindCSS'],
+    github: '#', // Add your GitHub link here
+    live: 'https://studentscorner.great-site.net/studentcorner/home.php', // Replace with your actual live link if available
+    image: 'https://studentscorner.great-site.net/studentcorner/images/logobanner.png' // Replace with actual image link if available
+  },
+  {
+    title: 'Smart Helmet Detection',
+    description: 'A real-time safety system using YOLOv3 to detect whether riders are wearing helmets. Useful for traffic surveillance and enforcement through automated detection.',
+    tech: ['Python', 'YOLOv3', 'OpenCV', 'TensorFlow'],
+    github: '#', // Add your GitHub link here
+    live: '', // If there's a video/demo link, add it here
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-8WktR6hJIOQsmaKe32cPubMCpjwtM04XTQ&s' // Replace with actual image link if available
+  }
+];
+
 
   return (
     <div className="min-h-screen bg-gray-50 w-full overflow-x-hidden">
@@ -129,19 +122,18 @@ const Portfolio = () => {
         <div className="w-full text-center px-4">
           <div className="mb-8">
             <img
-              src="https://media.licdn.com/dms/image/v2/D5603AQHVvAWKMOeGxw/profile-displayphoto-shrink_800_800/B56Zag8cNEHUAc-/0/1746456921931?e=1757548800&v=beta&t=NNtwg2z2LTRbGP_WvUc9qM0Ay9BTM6GajadC-Fh7IHI"
+              src="../src/assets/images/pp.jpeg"
               alt="Profile"
               className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-lg"
             />
             <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">
-              Hi, I'm <span className="text-blue-600">Chaitanya Patil</span>
+              Hi, I'm <span className="text-blue-600">Akash Thakur</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8">
               Full Stack Developer & Problem Solver
             </p>
             <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-12">
-              I create exceptional digital experiences with modern technologies. 
-              Passionate about clean code, user experience, and continuous learning.
+              I specialize in crafting exceptional digital experiences using modern technologies.  With a strong focus on clean code, intuitive user interfaces, and continuous learning, I am passionate about building scalable and user-centric solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
@@ -171,7 +163,7 @@ const Portfolio = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">About Me</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              I'm a passionate frontend developer currently pursuing my third year in Electronics and Telecommunication Engineering at PICT. With a strong foundation in web development and UI design, I've built several impactful projects and am now expanding my skills towards full-stack development.
+              I'm a passionate full-stack developer currently pursuing my third year in Electronics and Telecommunication Engineering at PICT. With a strong foundation in web development and UI design, I've built several impactful projects and am now expanding my skills towards full-stack development.
             </p>
           </div>
           
@@ -179,10 +171,10 @@ const Portfolio = () => {
             <div>
               <h3 className="text-2xl font-semibold text-gray-800 mb-6">My Journey</h3>
               <p className="text-gray-600 mb-4">
-                My journey began with a curiosity to build beautiful and functional websites. Over the last two years, I've worked on four diverse projects that challenged my creativity and technical skills. I love solving real-world problems with simple, intuitive designs and clean code.
+                My journey began with a curiosity to build beautiful and functional websites. Over the last two years, I've worked on three diverse projects that challenged my creativity and technical skills. I love solving real-world problems with simple, intuitive designs and clean code.
               </p>
               <p className="text-gray-600 mb-6">
-                As I continue learning backend technologies to become a full-stack developer, I focus on writing maintainable code and understanding best practices in modern development. Outside coding, I enjoy exploring tech trends, bikes, and improving my English communication skills.
+                As I continue learning backend technologies to become a full-stack developer, I focus on writing maintainable code and understanding better practices in modern development. Outside coding, I enjoy exploring tech trends, bikes, and improving my English communication skills.
               </p>
               
               <div className="grid grid-cols-2 gap-6">
@@ -243,16 +235,7 @@ const Portfolio = () => {
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {skills.map((skill, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="font-semibold text-gray-800">{skill.name}</span>
-                  <span className="text-blue-600">{skill.level}%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div 
-                    className="bg-blue-600 h-2 rounded-full transition-all duration-1000"
-                    style={{ width: `${skill.level}%` }}
-                  />
-                </div>
+                <span className="font-semibold text-gray-800">{skill}</span>
               </div>
             ))}
           </div>
@@ -326,11 +309,11 @@ const Portfolio = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <Mail className="h-5 w-5 text-blue-600" />
-                  <span className="text-gray-600">chaitanya241005@gmail.com</span>
+                  <span className="text-gray-600">akashthakurjk@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <Phone className="h-5 w-5 text-blue-600" />
-                  <span className="text-gray-600">+91 6396663693</span>
+                  <span className="text-gray-600">+91 9541661529</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <MapPin className="h-5 w-5 text-blue-600" />
@@ -341,10 +324,10 @@ const Portfolio = () => {
               <div className="mt-8">
                 <h4 className="text-lg font-semibold text-gray-800 mb-4">Follow Me</h4>
                 <div className="flex gap-4">
-                  <a href="https://www.linkedin.com/in/chaitanya-patil-7769b1292/" className="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 hover:text-black transition-colors">
+                  <a href="www.linkedin.com/in/akash-thakur-6354b934" className="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 hover:text-black transition-colors">
                     <Linkedin className="h-5 w-5" />
                   </a>
-                  <a href="https://github.com/Cyp5556" className="bg-gray-800 text-white p-3 rounded-lg hover:bg-gray-900 transition-colors">
+                  <a href="https://github.com/Akash9541" className="bg-gray-800 text-white p-3 rounded-lg hover:bg-gray-900 transition-colors">
                     <Github className="h-5 w-5" />
                   </a>
                 </div>
@@ -387,7 +370,7 @@ const Portfolio = () => {
       <footer className="bg-gray-800 text-white py-8 w-full">
         <div className="w-full px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gray-400">
-            © 2025 Chaitanya Patil. Built with React & Tailwind CSS.
+            © 2025 Akash Thakur. Built with React & Tailwind CSS.
           </p>
         </div>
       </footer>
