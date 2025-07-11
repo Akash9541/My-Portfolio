@@ -140,7 +140,7 @@ const projects = [
         <div className="w-full text-center px-4">
           <div className="mb-8">
             <img
-              src="./src/assets/images/Akash.jpeg"
+              src="/src/assets/images/Akash.jpeg"
               alt="Profile"
               className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg"
             />
