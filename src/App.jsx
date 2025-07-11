@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Search } from 'lucide-react';
-import myImage from './assets/images/Akash.jpeg';
+import akashImg from './assets/images/Akash.jpeg';
+import logobannerImg from './assets/images/logobanner.png';
 
-import { ChevronDown, Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Download, Menu, X, Code, Briefcase, GraduationCap, Award, User, MessageCircle } from 'lucide-react';
+import { Search, ChevronDown, Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Download, Menu, X, Code, Briefcase, GraduationCap, Award, User, MessageCircle } from 'lucide-react';
 
 const Portfolio = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -11,23 +11,21 @@ const Portfolio = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setActiveSection(sectionId);
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(id);
       setIsMenuOpen(false);
     }
   };
 
-    const downloadResume = () => {
+  const downloadResume = () => {
     const resumeUrl = '/resume/Akash_Thakur_Resume.pdf';
     const link = document.createElement('a');
     link.href = resumeUrl;
@@ -37,40 +35,26 @@ const Portfolio = () => {
     document.body.removeChild(link);
   };
 
-const skills = [
-  'ReactJS',
-  'JavaScript', 
-  'Node.js',
-  'Python',
-  'MYSQL',
-  'MongoDB',
-  'Git',
-  'TailwindCSS',
-  'HTML',
-  'CSS'
+  const skills = ['ReactJS', 'JavaScript', 'Node.js', 'Python', 'MYSQL', 'MongoDB', 'Git', 'TailwindCSS', 'HTML', 'CSS'];
 
-];
-
-const projects = [
-  {
-    title: 'Student\'s Counter',
-    description: 'A student-friendly web platform designed to help newcomers easily find PGs, hostels, messes, and other essential services near PICT. Built to simplify the settling-in process for first-year students.',
-    tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'TailwindCSS'],
-    github: '#', // Add your GitHub link here
-    live: 'https://studentscorner.great-site.net/studentcorner/home.php', // Replace with your actual live link if available
-    image: './src/assets/images/Logobanner.jpeg'
-     // Replace with actual image link if available
-  },
-  {
-    title: 'Smart Helmet Detection',
-    description: 'A real-time safety system using YOLOv3 to detect whether riders are wearing helmets. Useful for traffic surveillance and enforcement through automated detection.',
-    tech: ['Python', 'YOLOv3', 'OpenCV', 'TensorFlow'],
-    github: '#', // Add your GitHub link here
-    live: '', // If there's a video/demo link, add it here
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-8WktR6hJIOQsmaKe32cPubMCpjwtM04XTQ&s' // Replace with actual image link if available
-  }
-];
-
+  const projects = [
+    {
+      title: "Student's Counter",
+      description: 'A student-friendly web platform designed to help newcomers easily find PGs, hostels, messes, and other essential services near PICT.',
+      tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'TailwindCSS'],
+      github: '#',
+      live: 'https://studentscorner.great-site.net/studentcorner/home.php',
+      image: logobannerImg 
+    },
+    {
+      title: 'Smart Helmet Detection',
+      description: 'A real-time safety system using YOLOv3 to detect whether riders are wearing helmets.',
+      tech: ['Python', 'YOLOv3', 'OpenCV', 'TensorFlow'],
+      github: '#',
+      live: '',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-8WktR6hJIOQsmaKe32cPubMCpjwtM04XTQ&s',
+    },
+  ];
 
   return (
     <div className="min-h-screen w-full bg-gray-200 overflow-x-hidden">
@@ -81,53 +65,30 @@ const projects = [
             <div className="text-2xl font-bold text-gray-800">
               <span className="text-blue-600">Port</span>folio
             </div>
-
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-600 h-4 w-4" />
-                <input
-                  type="text"
-                    placeholder="Search..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className=" pl-10 pr-3 py-3  border border-blue-600 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all"
-                />
+              <input
+                type="text"
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10 pr-3 py-3 border border-blue-600 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all"
+              />
             </div>
-
-            
-            {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
               {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item)}
-                  className={`capitalize transition-colors hover:text-blue-400 ${
-                    activeSection === item ? 'text-slate-400' : 'text-blue-600'
-                  }`}
-                >
-                  {item}
-                </button>
+                <button key={item} onClick={() => scrollToSection(item)} className={`capitalize transition-colors hover:text-blue-400 ${activeSection === item ? 'text-slate-400' : 'text-blue-600'}`}>{item}</button>
               ))}
             </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
+            <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
-
-          {/* Mobile Menu */}
           {isMenuOpen && (
             <div className="md:hidden bg-white border-t">
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
-                  <button
-                    key={item}
-                    onClick={() => scrollToSection(item)}
-                    className="block w-full text-left px-3 py-2 text-blue-600 hover:text-gray-700 capitalize"
-                  >
+                  <button key={item} onClick={() => scrollToSection(item)} className="block w-full text-left px-3 py-2 text-blue-600 hover:text-gray-700 capitalize">
                     {item}
                   </button>
                 ))}
@@ -141,33 +102,20 @@ const projects = [
       <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 w-full">
         <div className="w-full text-center px-4">
           <div className="mb-8">
-            <img 
-            src={myImage} 
-            alt="Profile" 
-            className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg"
-            />
+            <img src={akashImg} alt="Profile" className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg" />
             <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">
               Hi, I'm <span className="text-blue-600">Akash Thakur</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8">
-              Full Stack Developer & Problem Solver
-            </p>
+            <p className="text-xl md:text-2xl text-gray-600 mb-8">Full Stack Developer & Problem Solver</p>
             <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-12">
-              I specialize in crafting exceptional digital experiences using modern technologies.  With a strong focus on clean code, intuitive user interfaces, and continuous learning, I am passionate about building scalable and user-centric solutions.
+              I specialize in crafting exceptional digital experiences using modern technologies. With a strong focus on clean code, intuitive user interfaces, and continuous learning, I am passionate about building scalable and user-centric solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => scrollToSection('projects')}
-                className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
-              >
-                <Briefcase className="h-5 w-5" />
-                View My Work
+              <button onClick={() => scrollToSection('projects')} className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
+                <Briefcase className="h-5 w-5" /> View My Work
               </button>
-              <button
-              onClick={downloadResume}
-              className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors flex items-center justify-center gap-2">
-                <Download className="h-5 w-5" />
-                Download Resume
+              <button onClick={downloadResume} className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors flex items-center justify-center gap-2">
+                <Download className="h-5 w-5" /> Download Resume
               </button>
             </div>
           </div>
