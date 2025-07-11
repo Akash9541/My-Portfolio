@@ -56,7 +56,7 @@ const projects = [
     tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'TailwindCSS'],
     github: '#', // Add your GitHub link here
     live: 'https://studentscorner.great-site.net/studentcorner/home.php', // Replace with your actual live link if available
-    image: 'https://studentscorner.great-site.net/studentcorner/images/logobanner.png'
+    image: './src/assets/images/Logobanner.jpeg'
      // Replace with actual image link if available
   },
   {
